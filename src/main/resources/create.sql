@@ -106,7 +106,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `TRANSACTION_CODE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `transaction_code` (
+CREATE TABLE `TRANSACTION_CODE` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -129,7 +129,7 @@ UNLOCK TABLES;
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER` (
@@ -148,7 +148,7 @@ CREATE TABLE `USER` (
 
 LOCK TABLES `USER` WRITE;
 /*!40000 ALTER TABLE `USER` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'staff_1','123456','APPROVED'),(2,'staff_2','123456','APPROVED');
+INSERT INTO `USER` VALUES (1,'staff_1','123456','APPROVED'),(2,'staff_2','123456','APPROVED');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
