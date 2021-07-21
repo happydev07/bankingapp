@@ -126,7 +126,7 @@ LOCK TABLES `TRANSACTION_CODE` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `user`
+-- Table structure for table `USER`
 --
 
 DROP TABLE IF EXISTS `USER`;
@@ -143,13 +143,13 @@ CREATE TABLE `USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `USER`
 --
 
 LOCK TABLES `USER` WRITE;
 /*!40000 ALTER TABLE `USER` DISABLE KEYS */;
 INSERT INTO `USER` VALUES (1,'staff_1','123456','APPROVED'),(2,'staff_2','123456','APPROVED');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+/*!40000 ALTER TABLE `USER` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
