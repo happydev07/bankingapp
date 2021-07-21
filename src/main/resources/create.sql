@@ -19,10 +19,10 @@
 -- Table structure for table `client_account`
 --
 
-DROP TABLE IF EXISTS `CLIENT_ACCOUNT`;
+DROP TABLE IF EXISTS `client_account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CLIENT_ACCOUNT` (
+CREATE TABLE `client_account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `amount` decimal(19,4) DEFAULT NULL,
@@ -34,19 +34,19 @@ CREATE TABLE `CLIENT_ACCOUNT` (
 -- Dumping data for table `client_account`
 --
 
-LOCK TABLES `CLIENT_ACCOUNT` WRITE;
-/*!40000 ALTER TABLE `CLIENT_ACCOUNT` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CLIENT_ACCOUNT` ENABLE KEYS */;
+LOCK TABLES `client_account` WRITE;
+/*!40000 ALTER TABLE `client_account` DISABLE KEYS */;
+/*!40000 ALTER TABLE `client_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `client_info`
 --
 
-DROP TABLE IF EXISTS `CLIENT_INFO`;
+DROP TABLE IF EXISTS `client_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CLIENT_INFO` (
+CREATE TABLE `client_info` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(255) NOT NULL,
   `fin` varchar(255) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `CLIENT_INFO` (
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `user_id_idx` (`user_id`),
-  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,19 +66,19 @@ CREATE TABLE `CLIENT_INFO` (
 -- Dumping data for table `client_info`
 --
 
-LOCK TABLES `CLIENT_INFO` WRITE;
-/*!40000 ALTER TABLE `CLIENT_INFO` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CLIENT_INFO` ENABLE KEYS */;
+LOCK TABLES `client_info` WRITE;
+/*!40000 ALTER TABLE `client_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `client_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `client_transaction`
 --
 
-DROP TABLE IF EXISTS `CLIENT_TRANSACTION`;
+DROP TABLE IF EXISTS `client_transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CLIENT_TRANSACTION` (
+CREATE TABLE `client_transaction` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `trans_code` varchar(45) NOT NULL,
   `status` varchar(45) DEFAULT NULL,
@@ -94,19 +94,19 @@ CREATE TABLE `CLIENT_TRANSACTION` (
 -- Dumping data for table `client_transaction`
 --
 
-LOCK TABLES `CLIENT_TRANSACTION` WRITE;
-/*!40000 ALTER TABLE `CLIENT_TRANSACTION` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CLIENT_TRANSACTION` ENABLE KEYS */;
+LOCK TABLES `client_transaction` WRITE;
+/*!40000 ALTER TABLE `client_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `client_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `transaction_code`
 --
 
-DROP TABLE IF EXISTS `TRANSACTION_CODE`;
+DROP TABLE IF EXISTS `transaction_code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `TRANSACTION_CODE` (
+CREATE TABLE `transaction_code` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -117,22 +117,22 @@ CREATE TABLE `TRANSACTION_CODE` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TRANSACTION_CODE`
+-- Dumping data for table `transaction_code`
 --
 
-LOCK TABLES `TRANSACTION_CODE` WRITE;
-/*!40000 ALTER TABLE `TRANSACTION_CODE` DISABLE KEYS */;
-/*!40000 ALTER TABLE `TRANSACTION_CODE` ENABLE KEYS */;
+LOCK TABLES `transaction_code` WRITE;
+/*!40000 ALTER TABLE `transaction_code` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transaction_code` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `USER`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `USER`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `USER` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
@@ -143,23 +143,23 @@ CREATE TABLE `USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `USER`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `USER` WRITE;
-/*!40000 ALTER TABLE `USER` DISABLE KEYS */;
-INSERT INTO `USER` VALUES (1,'staff_1','123456','APPROVED'),(2,'staff_2','123456','APPROVED');
-/*!40000 ALTER TABLE `USER` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'staff_1','123456','APPROVED'),(2,'staff_2','123456','APPROVED');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `user_role`
 --
 
-DROP TABLE IF EXISTS `USER_ROLE`;
+DROP TABLE IF EXISTS `user_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `USER_ROLE` (
+CREATE TABLE `user_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(45) NOT NULL,
   `role` varchar(45) NOT NULL,
@@ -171,10 +171,10 @@ CREATE TABLE `USER_ROLE` (
 -- Dumping data for table `user_role`
 --
 
-LOCK TABLES `USER_ROLE` WRITE;
-/*!40000 ALTER TABLE `USER_ROLE` DISABLE KEYS */;
-INSERT INTO `USER_ROLE` VALUES (1,'staff_1','staff'),(3,'staff_2','staff');
-/*!40000 ALTER TABLE `USER_ROLE` ENABLE KEYS */;
+LOCK TABLES `user_role` WRITE;
+/*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
+INSERT INTO `user_role` VALUES (1,'staff_1','staff'),(3,'staff_2','staff');
+/*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
