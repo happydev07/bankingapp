@@ -71,8 +71,8 @@ public class RegisterServlet extends DefaultServlet {
 			userRole.setUser(user);
 			userRole.setRole(Role.client);
 			userRoleDAO.create(userRole );
-			emailService.sendMail(clientAccount.getEmail(), "SutdBank registration", "Thank you for the registration!");
-			sendMsg(request, "You are successfully registered...");
+// 			emailService.sendMail(clientAccount.getEmail(), "SutdBank registration", "Thank you for the registration!");
+// 			sendMsg(request, "You are successfully registered...");
 			redirect(response, ServletPaths.WELCOME);
 		} catch (ServiceException e) {
 			sendError(request, e.getMessage());
